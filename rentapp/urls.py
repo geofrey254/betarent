@@ -7,6 +7,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('listing/', views.listing, name='listing')
 ]
 
 if settings.DEBUG: 
