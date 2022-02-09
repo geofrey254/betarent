@@ -3,15 +3,48 @@
 }
 
 @media (max-width: 991px) {
-    
+    input {
+        font-size: 12px;
+      }
+
+    .active input {
+        width: 200px;
+        padding: 12px 20px;
+      }
+      
+      .active .mic-icon {
+        width: 10px;
+      }
 }
 
 @media (max-width: 768px) {
-   
+    input {
+        font-size: 12px;
+      }
+
+    .active input {
+        width: 200px;
+        padding: 12px 20px;
+      }
+      
+      .active .mic-icon {
+        width: 10px;
+      }
 }
 
 @media (max-width: 575px) {
-    
+    input {
+        font-size: 12px;
+      }
+
+    .active input {
+        width: 200px;
+        padding: 12px 20px;
+      }
+      
+      .active .mic-icon {
+        width: 10px;
+      }
 }
 
 @media (max-width: 575px),
