@@ -1,64 +1,469 @@
-@media (min-width: 1200px) {
-    
+@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i");
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
-@media (max-width: 991px) {
-    input {
-        font-size: 12px;
-      }
-
-    .active input {
-        width: 200px;
-        padding: 12px 20px;
-      }
-      
-      .active .mic-icon {
-        width: 10px;
-      }
+:root {
+  --primary: #FC5404;
+  --secondary: #eee;
+  --dark: #323232;
+  --bg: #202040;
+  --box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+  --border-radius-small: 5px;
+  --red: rgba(10, 10, 10, 0.849);
+  --green: rgba(72, 135, 187, 0.8);
+  --body-bg: rgba(237, 242, 247, 1)
 }
 
-@media (max-width: 768px) {
-    input {
-        font-size: 12px;
-      }
-
-    .active input {
-        width: 200px;
-        padding: 12px 20px;
-      }
-      
-      .active .mic-icon {
-        width: 10px;
-      }
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
 }
 
-@media (max-width: 575px) {
-    input {
-        font-size: 12px;
-      }
-
-    .active input {
-        width: 200px;
-        padding: 12px 20px;
-      }
-      
-      .active .mic-icon {
-        width: 10px;
-      }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Archivo Narrow", sans-serif;
+  line-height: 1.3;
+  font-weight: 500;
 }
 
-@media (max-width: 575px),
-(max-height: 600px) {
-    input {
-        font-size: 12px;
-      }
-
-    .active input {
-        width: 200px;
-        padding: 12px 20px;
-      }
-      
-      .active .mic-icon {
-        width: 10px;
-      }
+p {
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 400;
 }
+
+a,
+a:hover,
+a:focus {
+  -webkit-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+  transition-duration: 500ms;
+  text-decoration: none;
+  outline: 0 solid transparent;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* :: 3.1.0 Spacing */
+
+.mt-15 {
+  margin-top: 15px !important;
+}
+
+.mt-30 {
+  margin-top: 30px !important;
+}
+
+.mt-50 {
+  margin-top: 50px !important;
+}
+
+.mt-70 {
+  margin-top: 70px !important;
+}
+
+.mt-100 {
+  margin-top: 100px !important;
+}
+
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+.mb-50 {
+  margin-bottom: 50px !important;
+}
+
+.mb-70 {
+  margin-bottom: 70px !important;
+}
+
+.mb-100 {
+  margin-bottom: 100px !important;
+}
+
+.ml-15 {
+  margin-left: 15px !important;
+}
+
+.ml-30 {
+  margin-left: 30px !important;
+}
+
+.ml-50 {
+  margin-left: 50px !important;
+}
+
+.mr-15 {
+  margin-right: 15px !important;
+}
+
+.mr-30 {
+  margin-right: 30px !important;
+}
+
+.mr-50 {
+  margin-right: 50px !important;
+}
+
+
+/* :: 3.2.0 Height */
+
+.height-400 {
+  height: 400px !important;
+}
+
+.height-500 {
+  height: 500px !important;
+}
+
+.height-600 {
+  height: 600px !important;
+}
+
+.height-700 {
+  height: 700px !important;
+}
+
+.height-800 {
+  height: 800px !important;
+}
+
+
+/* :: 3.3.0 Section Padding */
+
+section {
+  padding: 3.9rem 0;
+}
+
+.section-padding-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-padding-100-0 {
+  padding-top: 100px;
+  padding-bottom: 0;
+}
+
+.section-padding-0-100 {
+  padding-top: 0;
+  padding-bottom: 100px;
+}
+
+.section-padding-100-70 {
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.btn-primary {
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.bg-unique {
+  background: #00B4DB;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* cards featured */
+
+.top-nav {
+  background: #00B4DB;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/* Rental cards */
+.house-card {
+  width: 350px;
+  background-color: white;
+  box-shadow: 1px 2px 10px -3px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: relative;
+}
+
+.inline {
+  display: inline;
+}
+
+.house-header-images img {
+  height: 180px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+}
+
+.heart-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: .8;
+}
+
+.heart-button:active {
+  transform: scale(0.9);
+}
+
+#heart-full {
+  display: none;
+}
+
+.house-header {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.house-header .title .type {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  color: #545d6a;
+}
+
+.house-header .title .price {
+  font-size: 28px;
+  color: #172335
+}
+
+.house-header .title .location {
+  color: #737a84;
+  font-size: 14px;
+}
+
+.house-info {
+  display: flex;
+  padding: 10px 15px 18px 15px;
+  color: #959ba4;
+}
+
+.house-info div {
+  margin-right: 35px;
+}
+
+.house-info div svg {
+  margin-right: 8px;
+}
+
+.light-font {
+  font-size: 14px;
+  color: hsl(214, 7%, 47%);
+}
+
+.dark-font {
+  color: #2f3033;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+p {
+  margin: 2px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+}
+
+.house-realtor {
+  background-color: #f7f8f9;
+}
+
+.house-realtor div {
+  padding: 10px 15px 20px 15px;
+}
+
+.house-realtor .heading {
+  text-transform: uppercase;
+  color: #808792;
+  font-size: 12px;
+  letter-spacing: .7px;
+  margin-bottom: 10px;
+}
+
+.house-realtor .realtor-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 20px;
+}
+
+.house-realtor .realtor-phone {
+  color: #959ba4;
+}
+
+/* Search bar */
+.searchbox {
+  width: 100%;
+  height: 70vh;
+  background: #00B4DB;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchBox {
+  border-radius: 55px;
+  padding: 30px;
+  background: #f0f3ff;
+  display: flex;
+  align-items: center;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+#googleIcon {
+  width: 70px;
+  cursor: pointer;
+}
+
+.fa-microphone {
+  width: 0px;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+input {
+  font-size: 20px;
+  width: 0px;
+  border: 0;
+  background: transparent;
+  outline: none;
+  transition: 2s;
+}
+
+.active input {
+  width: 500px;
+  padding: 12px 20px;
+}
+
+.active .mic-icon {
+  width: 30px;
+}
+
+/* Newsletter */
+.news {
+  padding: 4.8px 0 9.6px 0;
+  text-align: center;
+}
+
+.news-heading {
+  font-size: 44px;
+  line-height: 1.4;
+
+  color: #333;
+}
+
+.news p {
+  font-size: 18px;
+  margin-bottom: 16px;
+  margin-top: 12px;
+  line-height: 1.8;
+
+}
+
+.news input[type="email"] {
+  display: inline-block;
+  width: 60%;
+  padding: 18px 36px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  height: 70px;
+  margin-top: 18px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.06);
+
+}
+
+.news input,
+.news input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 3;
+}
+
+.bt {
+  margin-left: -160px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 20px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  background-color: #48B774;
+  color: #fff;
+}
+
+/* Home pgae cards */
