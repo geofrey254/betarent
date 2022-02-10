@@ -2,15 +2,139 @@
 {% load static %}
 {% block content %}
 <section class="searchbox">
-<div class="hero">
-  <div id="searchBox">
-    <img src="{% static 'img/logo.png' %}" alt="Beta Rent logo" id="googleIcon">
-    <input type="text" placeholder="Where do you want to live" />    
-    <a href="#"><i class='bx bx-search-alt-2 bx-lg text-dark'></i></a>
+  <div class="hero">
+    <div id="searchBox">
+      <img src="{% static 'img/logo.png' %}" alt="Beta Rent logo" id="googleIcon">
+      <input type="text" placeholder="Where do you want to live" />
+      <a href="#"><i class='bx bx-search-alt-2 bx-lg text-dark'></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="hot">
+<div class="container">
+  <div class="row">
+
+    <div class="col-12">
+      <h3 class="text-center" style="font-weight:900;"><i class='bx bxs-hot'></i> Top Spaces Today</h3>
+    </div>
+
+    <div class="col-md-4 p-4">
+      <div class="border" style="box-shadow: 0 0  20px #eee;">
+        <div class="d-flex p-3 justify-content-between">
+          <div class="mt-2">
+            <a href="#" class="d-block text-dark" style="line-height: .8; font-weight: 600;">Nairobi, Kenya</a>
+            <small><a href="#" class="text-info">Bedsitter</a></small>
+          </div>
+
+          <div class="mt-2">
+            <a href="#" class="d-block text-dark border rounded p-1 border-info"><i class='bx bxs-crown bx-tada'></i>
+              Featured</a>
+          </div>
+        </div>
+        <a href="#"><img class="w-100" src="{% static 'img/rent.jpg' %}" alt="" style="height: 200px;"></a>
+        <div class="px-3 py-4">
+          <a href="#" class="d-block">
+            <h5 class="text-dark h6" style="font-weight: 600;">UpperHill, Nairobi</h5>
+          </a>
+          <h4 class="text-danger">Ksh. 6500 <small class="text-danger">+ deposit</small></h4>
+
+          <small class="mt-1">4 Bedroom (Penthouse) Apartment with Dsq For Rent in Parklands</small>
+
+        </div>
+        <div class="p-3 bg-info" style="background: #00B4DB;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #0083B0, #00B4DB);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+          <div class="d-flex mr-4 justify-content-between">
+            <h2><a href="" class="text-light"><i class='bx bxs-phone-call'></i></a></h2>
+            <h2><a href="" class="text-light"><i class='bx bxl-whatsapp'></i></a></h2>
+            <h2><a href="" class="text-light"><i class='bx bx-envelope'></i></a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 p-4">
+      <div class="border" style="box-shadow: 0 0  20px #eee;">
+        <div class="d-flex p-3 justify-content-between">
+          <div class="mt-2">
+            <a href="#" class="d-block text-dark" style="line-height: .8; font-weight: 600;">Nairobi, Kenya</a>
+            <small><a href="#" class="text-info">Bedsitter</a></small>
+          </div>
+
+          <div class="mt-2">
+            <a href="#" class="d-block text-dark border rounded p-1 border-info"><i class='bx bxs-crown bx-tada'></i>
+              Featured</a>
+          </div>
+        </div>
+        <a href="#"><img class="w-100" src="{% static 'img/r2.jpg' %}" alt="" style="height: 200px;"></a>
+        <div class="px-3 py-4">
+          <a href="#" class="d-block">
+            <h5 class="text-dark h6" style="font-weight: 600;">UpperHill, Nairobi</h5>
+          </a>
+          <h4 class="text-danger">Ksh. 6500 <small class="text-danger">+ deposit</small></h4>
+
+          <small class="mt-1">4 Bedroom (Penthouse) Apartment with Dsq For Rent in Parklands</small>
+
+        </div>
+        <div class="p-3 bg-info" style="background: #00B4DB;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #0083B0, #00B4DB);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+          <div class="d-flex mr-4 justify-content-between">
+            <h2><a href="" class="text-light"><i class='bx bxs-phone-call'></i></a></h2>
+            <h2><a href="" class="text-light"><i class='bx bxl-whatsapp'></i></a></h2>
+            <h2><a href="" class="text-light"><i class='bx bx-envelope'></i></a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 p-4">
+      <div class="border" style="box-shadow: 0 0  20px #eee;">
+        <div class="d-flex p-3 justify-content-between">
+          <div class="mt-2">
+            <a href="#" class="d-block text-dark" style="line-height: .8; font-weight: 600;">Nairobi, Kenya</a>
+            <small><a href="#" class="text-info">Bedsitter</a></small>
+          </div>
+
+          <div class="mt-2">
+            <a href="#" class="d-block text-dark border rounded p-1 border-info"><i class='bx bxs-crown bx-tada'></i>
+              Featured</a>
+          </div>
+        </div>
+        <a href="#"><img class="w-100" src="{% static 'img/r3.jpg' %}" alt="" style="height: 200px;"></a>
+        <div class="px-3 py-4">
+          <a href="#" class="d-block">
+            <h5 class="text-dark h6" style="font-weight: 600;">UpperHill, Nairobi</h5>
+          </a>
+          <h4 class="text-danger">Ksh. 6500 <small class="text-danger">+ deposit</small></h4>
+
+          <small class="mt-1">4 Bedroom (Penthouse) Apartment with Dsq For Rent in Parklands</small>
+
+        </div>
+        <div class="p-3 bg-info" style="background: #00B4DB;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #0083B0, #00B4DB);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+          <div class="d-flex mr-4 justify-content-between">
+            <h2><a href="" class="text-light"><i class='bx bxs-phone-call'></i></a></h2>
+            <h2><a href="" class="text-light"><i class='bx bxl-whatsapp'></i></a></h2>
+            <h2><a href="" class="text-light"><i class='bx bx-envelope'></i></a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>
 </section>
-
-
-
 {% endblock content %}
