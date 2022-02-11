@@ -466,4 +466,11 @@ input {
   color: #fff;
 }
 
-/* Home pgae cards */
+/* Before footer landing page*/
+.b-foot{
+  width: 100%;
+  height: 60vh;
+  background: url(/static/img/1.jpg), linear-gradient(360deg, rgb(8, 163, 235), #ffffff) center no-repeat;
+  background-blend-mode: multiply;
+  background-size: cover;
+}
