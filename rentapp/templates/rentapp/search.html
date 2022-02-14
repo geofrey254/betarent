@@ -1,0 +1,84 @@
+{% extends 'rentapp/base.html' %}
+{% load static %}
+{% block content %}
+<section class="section-padding-100-0">
+  <div class="wrapper justify-content-center align-content-center">
+    <div class="container">
+      <form role="search" method="get" class="search-form form" action="{% url 'search' %}">
+        <label>
+          {% csrf_token %}
+          <input type="search" class="search-field" placeholder="Search location, price, category (bedsitter, hostel, apartment)" name="q"/>
+        </label>
+        <button type="submit" class="search-submit button" value="&#xf002"><i class='bx bx-search-alt bx-lg text-light'></i></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<hr>
+<section class="random">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="text-center" style="font-weight:900;">Spaces for rent</h3>
+      </div>
+      {% for post in house %}
+      <div class="col-lg-4 col-sm-12 col-md-4 mb-3">
+        <div class="house-card">
+          <div class="house-header-images">
+            {% if post.list_img %}
+            <a href="#"><img src="{{ post.list_img.url }}" /></a>
+            {% endif %}
+          </div>
+          <div class="house-content">
+            <div class="house-header">
+              <div class="title">
+                <p class="type">{{post.location}} &middot; {{post.county}} </p>
+                {% for cat in list.categories.all %}
+                <small><a href="#" class="text-info">{{ cat.title }}</a></small>
+                {% endfor %}
+                <p class="price">Ksh {{post.rent}}</p>
+                <p class="location">{{ post.body }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="house-info">
+              <div>
+                <svg style="width:26px;height:26px" viewBox="0 0 24 18">
+                  <path fill="#c7cace"
+                    d="M21,14V15C21,16.91 19.93,18.57 18.35,19.41L19,22H17L16.5,20C16.33,20 16.17,20 16,20H8C7.83,20 7.67,20 7.5,20L7,22H5L5.65,19.41C4.07,18.57 3,16.91 3,15V14H2V12H20V5A1,1 0 0,0 19,4C18.5,4 18.12,4.34 18,4.79C18.63,5.33 19,6.13 19,7H13A3,3 0 0,1 16,4C16.06,4 16.11,4 16.17,4C16.58,2.84 17.69,2 19,2A3,3 0 0,1 22,5V14H21V14M19,14H5V15A3,3 0 0,0 8,18H16A3,3 0 0,0 19,15V14Z" />
+                </svg> <span class="dark-font bold">3</span> <span class="bold">Bathrooms</span>
+              </div>
+              <div>
+                <svg style="width:26px;height:26px" viewBox="0 0 24 13">
+                  <path fill="#c7cace" d="M19,7H5V14H3V5H1V20H3V17H21V20H23V11A4,4 0 0,0 19,7" />
+                </svg> <span class="dark-font bold">4</span> <span class="bold">Bedrooms</span>
+              </div>
+            </div>
+            <hr />
+            <div class="house-realtor">
+              <div>
+                <p class="heading bold">Realtor</p>
+                <img class="realtor-image"
+                  src="https://www.everywomaneverychild.org/wp-content/uploads/2017/04/Archana-Chaudhary-IMG_3725-edit_2500x1667.jpg" />
+                <div class="d-flex mr-4 justify-content-between">
+                  <h2><a href="" class="text-dark"><i class='bx bxs-phone-call'></i></a></h2>
+                  <h2><a href="" class="text-dark"><i class='bx bxl-whatsapp'></i></a></h2>
+                  <h2><a href="" class="text-dark"><i class='bx bx-envelope'></i></a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}

@@ -14,8 +14,8 @@
     <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/x-icon">
     <link rel="icon" href="{% static 'img/logo.png' %}">
 
-    <link rel="stylesheet" href="{% static 'css/official.css' %}">
-    <link rel="stylesheet" href="{% static 'css/query.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rent.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
 
 
 
@@ -46,10 +46,9 @@
         <div class="fill container d-flex flex-wrap justify-content-center text-center align-content-center">
             <li class="nav-item"><a href="{%url 'listing'%}" class="nav-link link-dark px-lg-4 px-2 ">All</a>
             </li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2 ">Apartments</a>
+            <li class="nav-item"><a href="#" class="nav-link link-dark px-2 ">{{cat.title}}</a>
             </li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-lg-4 px-2">Betsitters</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-lg-4 px-2">Hostels</a></li>
+            
         </div>
     </header>
 
@@ -67,32 +66,33 @@
     <!-- Footer begins here -->
     <footer class="py-5 bg-unique">
         <div class="container text-center">
-          <a href="https://componentity.com" target="_blank">
-        <img src="{% static 'img/logo.png' %}" class="d-block mb-4 mx-auto" width="100px">
-      </a>
-          <p class="text-light col-md-9 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus soluta veritatis sunt est veniam, rem neque impedit rerum aliquid iste  dolores laboriosam?</p>
-          <hr class="my-5">
-          <div class="mb-3">
-               <a href="/#" class="mx-1">
-                <i class='bx bxl-twitter bx-lg text-light'></i>
-               </a>
-               <a href="/#" class="w-6 mx-1">
-                <i class='bx bxl-facebook bx-lg text-light'></i>
-               </a>
-               <a href="/#" class="w-6 mx-1">
-                <i class='bx bxl-instagram bx-lg text-light'></i>
-               </a>
-               <a href="/#" class="w-6 mx-1">
-                <i class='bx bxl-google-plus bx-lg text-light'></i>
-               </a>
-               
-               
+            <a href="https://componentity.com" target="_blank">
+                <img src="{% static 'img/logo.png' %}" class="d-block mb-4 mx-auto" width="100px">
+            </a>
+            <p class="text-light col-md-9 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus
+                soluta veritatis sunt est veniam, rem neque impedit rerum aliquid iste dolores laboriosam?</p>
+            <hr class="my-5">
+            <div class="mb-3">
+                <a href="/#" class="mx-1">
+                    <i class='bx bxl-twitter bx-lg text-light'></i>
+                </a>
+                <a href="/#" class="w-6 mx-1">
+                    <i class='bx bxl-facebook bx-lg text-light'></i>
+                </a>
+                <a href="/#" class="w-6 mx-1">
+                    <i class='bx bxl-instagram bx-lg text-light'></i>
+                </a>
+                <a href="/#" class="w-6 mx-1">
+                    <i class='bx bxl-google-plus bx-lg text-light'></i>
+                </a>
+
+
             </div>
-          <p class="text-light">&copy; Beta Rent <script>
-            document.write(new Date().getFullYear());
-        </script>. All rights reserved!</p>
+            <p class="text-light">&copy; Beta Rent <script>
+                    document.write(new Date().getFullYear());
+                </script>. All rights reserved!</p>
         </div>
-      </footer>
+    </footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
