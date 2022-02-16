@@ -77,3 +77,22 @@ def CategoryView(request, slug):
 
     }
     return render(request, "rentapp/category.html", context)
+
+def house_detail(request, slug, *args, **kwargs):
+    latest = List.objects.all()[:9]
+    post        =   List.objects.get(slug=slug)    
+    search_post =   request.GET.get('q')
+    
+    # Search filter
+    if search_post:
+        house   =   List.objects.filter(Q(body__icontains=search_post)|Q(rent__icontains=search_post)|Q(categories__title__icontains=search_post)|Q(location__icontains=search_post)|Q(county__icontains=search_post)).distinct()
+        
+    else:
+        house   =   List.objects.all().order_by('-created_on')
+
+    context     =   {
+        "post": post,
+        "latest":latest,
+    }
+
+    return render(request, "rentapp/detail.html", context)

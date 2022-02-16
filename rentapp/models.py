@@ -68,7 +68,7 @@ class List(models.Model):
         return self.title + ' | ' + str(self.location)
     
     def get_absolute_url(self):
-        return reverse('post-detail', args=[self.slug])
+        return reverse('detail', args=[self.slug])
     
     def save(self, *args, **kwargs):
         if not self.id:

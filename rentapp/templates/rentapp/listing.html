@@ -28,7 +28,7 @@
       <div class="border" style="box-shadow: 0 0  20px #eee;">
         <div class="d-flex p-3 justify-content-between">
           <div class="mt-2">
-            <a href="#" class="d-block text-dark" style="line-height: .8; font-weight: 600;">{{post.location}},
+            <a href="{{post.get_absolute_url}}" class="d-block text-dark" style="line-height: .8; font-weight: 600;">{{post.location}},
               {{post.county}}</a>
             {% for cat in post.categories.all %}
             <small><a href="{% url 'category' cat.slug %}" class="text-info">{{ cat.title }}</a></small>
@@ -41,7 +41,7 @@
           </div>
         </div>
         {% if post.list_img %}
-        <a href="#"><img class="w-100" src="{{ post.list_img.url }}" alt="" style="height: 200px;"></a>
+        <a href="{{post.get_absolute_url}}"><img class="w-100" src="{{ post.list_img.url }}" alt="" style="height: 200px;"></a>
         {% endif %}
         <div class="px-3 py-4">
           <a href="#" class="d-block">
@@ -84,7 +84,7 @@
         <div class="house-card">
           <div class="house-header-images">
             {% if post.list_img %}
-            <a href="#"><img src="{{ post.list_img.url }}" /></a>
+            <a href="{{post.get_absolute_url}}"><img src="{{ post.list_img.url }}" /></a>
             {% endif %}
           </div>
           <div class="house-content">

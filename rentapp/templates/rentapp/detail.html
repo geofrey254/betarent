@@ -1,0 +1,232 @@
+{% extends 'rentapp/base.html' %} {% load static %} {% block content %}
+<section class="detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h3 class="type">{{post.title}} &middot; {{post.county}} </h3>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-12 mb-3">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{% static 'img/1.jpg' %}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{% static 'img/r2.jpg' %}" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{% static 'img/rent.jpg' %}" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.300611508406!2d36.77857343400208!3d-1.2784428593179957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f19f7fd53fbfd%3A0x40b8907600d98711!2sLavington%20Mall!5e0!3m2!1sen!2ske!4v1644915590973!5m2!1sen!2ske"
+                    width="430" height="420" class="border rounded-3 shadow-lg" allowfullscreen=""
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 border rounded my-4 p-2 shadow-lg">
+                        <h3 class="price"><i class='bx bx-money text-secondary'></i> Ksh {{post.rent}} <sup>/month</sup>
+                        </h3>
+                        <h4 class=""><i class='bx bx-map-pin text-secondary'></i> {{post.location}}, {{post.county}}
+                        </h4>
+                        <hr>
+                        <div class="mb-4 mt-2">
+                            <svg style="width:26px;height:26px" viewBox="0 0 24 18">
+                                <path fill="#c7cace"
+                                    d="M21,14V15C21,16.91 19.93,18.57 18.35,19.41L19,22H17L16.5,20C16.33,20 16.17,20 16,20H8C7.83,20 7.67,20 7.5,20L7,22H5L5.65,19.41C4.07,18.57 3,16.91 3,15V14H2V12H20V5A1,1 0 0,0 19,4C18.5,4 18.12,4.34 18,4.79C18.63,5.33 19,6.13 19,7H13A3,3 0 0,1 16,4C16.06,4 16.11,4 16.17,4C16.58,2.84 17.69,2 19,2A3,3 0 0,1 22,5V14H21V14M19,14H5V15A3,3 0 0,0 8,18H16A3,3 0 0,0 19,15V14Z" />
+                            </svg> <span class="dark-font text-dark">{{post.bathroom}}</span> <span
+                                class="text-dark">Bathrooms</span>
+                        </div>
+                        <div>
+                            <svg style="width:26px;height:26px" viewBox="0 0 24 13">
+                                <path fill="#c7cace" d="M19,7H5V14H3V5H1V20H3V17H21V20H23V11A4,4 0 0,0 19,7" />
+                            </svg> <span class="dark-font text-dark">{{post.bedrooms}}</span> <span
+                                class="text-dark">Bedrooms</span>
+                        </div>
+                        <div class="mt-3">
+                            <small class="disabled"><i class='bx bx-time '></i> {{ post.created_on|timesince }}
+                                ago</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 my-4 p-2 text-center">
+                        <div>
+                            <h5><i class='bx bxs-contact'></i> Contact Details</h5>
+                        </div>
+                        <div>
+                            <p class="lead bold text-danger">{{post.agent}}</p>
+                        </div>
+                        <div class="soc justify-content-center align-content-center text-center mt-2">
+                            <a href="tel:{{post.agent_mob}}" class="mx-1">
+                                <i class='bx bxs-phone-call bx-lg text-dark'></i>
+                            </a>
+                            <a href="https://wa.me/{{post.agent_whats}}" class="w-6 mx-1">
+                                <i class='bx bxl-whatsapp bx-lg bx-fade-up text-dark'></i>
+                            </a>
+                            <a href="mailto:{{post.agent_mail}}" class="w-6 mx-1">
+                                <i class='bx bx-envelope bx-lg text-dark'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <section class="quick">
+                <div class="container">
+                    <div>
+                        <h2 class="heading">Quick Facts</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 mb-3">
+                            <p>Property type</p>
+                            {% for cat in post.categories.all %}
+                            <h5 style="line-height: 1px; font-style:italic;">{{cat.title}}</h5>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-lg-3 mb-3">
+                            <p>Deposit</hp>
+                                <h5 style="line-height: 1px; font-style:italic;">Ksh 4,500</h5>
+                        </div>
+
+                        <div class="col-lg-3 mb-3">
+                            <p>Utility Bills</p>
+                            <h5 style="line-height: 1px; font-style:italic;">Ksh 500</h5>
+                        </div>
+
+                        <div class="col-lg-3 mb-3">
+                            <p>Pets</p>
+                            <h5 style="line-height: 1px; font-style:italic;">Not Stated</h5>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                <div class="container">
+                    <h2>Description</h2>
+                    <p>Rare opportunity to own a contemporary home, with a completely separate in-law unit. Home
+                        features approx 2800sqft 3beds/3.5baths along with 2 private outdoor spaces and two
+                        offices.....PLUS a 800sqft first floor 1bed+/1bath in-law (legally able to be rented out
+                        independently if not immediately needed) Unusually open and flowing floorplan. Each bedroom has
+                        an en suite bath. Exposed brick, high ceilings. large well applianced kitchen. Truly must be
+                        seen in person to appreciate. Convenient to transportation and highway. Short walk to expansive
+                        park and open space.</p>
+                </div>
+            <div class="table-de mb-5 mt-5">
+                <table class="table table-striped table-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col"><i class='bx bxs-home-smile'></i> HOME DETAILS</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FEATURES <i class='bx bxs-cctv'></i></td>
+                            <td></td>
+                           
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">External Features</td>
+                            <td>Balcony, CCTV, Parking, Electric fence</td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Internal Features</td>
+                            <td>Service charge included, Fibre Internet</td>
+                           
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Nearby</td>
+                            <td>Hospital, Bus Stop, Supermarket, Police Post</td>
+                           
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container">
+                <small>Year Built:&nbsp; <span class="bold font-weight-bold">2019</span></small>
+                <br>
+                <small>Last check for updates:&nbsp; <span
+                        class="bold font-weight-bold">{{post.updated_on|date:"M d, Y" }}</span></small>
+                <br>
+                <small>Realtor:&nbsp; <span class="bold font-weight-bold">{{post.agent}}</span></small>
+                <br>
+                {% for cat in post.categories.all %}
+                <small>Property Type:&nbsp; <span class="bold font-weight-bold">{{cat.title}}</span></small>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-4 p-4 border-left">
+            <div class=" mb-3 pb-3 px-2">
+                <div class="d-flex align-items-center">
+                    <div class="wrapper justify-content-center align-content-center">
+                        <div class="container">
+                            <form role="search" method="get" class="search-form form" action="{% url 'search' %}">
+                                <label>
+                                    {% csrf_token %}
+                                    <input type="search" class="search-field"
+                                        placeholder="Search location, price, category (bedsitter, hostel, apartment)"
+                                        name="q" />
+                                </label>
+                                <button type="submit" class="search-submit button" value="&#xf002"><i
+                                        class='bx bx-search-alt bx-lg text-light'></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h5><i class='bx bx-news'></i> Latest</h5>
+                </div>
+                {% for post in latest %}
+
+                <div class="d-flex align-items-start mt-3">
+                    <div class="pe-1">
+                        <img class="img-fluid mr-3 border rounded-3" style="width: 150px;" src="{{ post.list_img.url }}"
+                            alt="Post Image">
+                    </div>
+
+                    <div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <span class="card-title">{{post.title}}</span>
+                                <p><i class='bx bx-money text-secondary'></i> Ksh {{post.rent}} <sup>/month</sup></p>
+                            </div>
+                            <div class="card-action float-end">
+                                <a href="{{post.get_absolute_url}}" class="btn btn-sm btn-danger">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="mt-2">
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock content %}

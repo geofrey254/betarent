@@ -10,6 +10,7 @@ urlpatterns = [
     path('listing/', views.listing, name='listing'),
     path('search/', views.search, name='search'),
     path('beta_rent/category/<slug:slug>/', views.CategoryView, name='category'),
+    path('beta_rent/<slug:slug>/', views.house_detail, name='detail'),
 ]
 
 if settings.DEBUG: 
