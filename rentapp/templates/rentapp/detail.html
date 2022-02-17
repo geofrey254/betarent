@@ -31,7 +31,7 @@
 
             <div class="col-lg-5 col-md-5 col-sm-12">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.300611508406!2d36.77857343400208!3d-1.2784428593179957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f19f7fd53fbfd%3A0x40b8907600d98711!2sLavington%20Mall!5e0!3m2!1sen!2ske!4v1644915590973!5m2!1sen!2ske"
+                    src="{{post.g_maps}}"
                     width="430" height="420" class="border rounded-3 shadow-lg" allowfullscreen=""
                     loading="lazy"></iframe>
             </div>
@@ -104,17 +104,17 @@
 
                         <div class="col-lg-3 mb-3">
                             <p>Deposit</hp>
-                                <h5 style="line-height: 1px; font-style:italic;">Ksh 4,500</h5>
+                                <h5 style="line-height: 1px; font-style:italic;">{{post.deposit}}</h5>
                         </div>
 
                         <div class="col-lg-3 mb-3">
                             <p>Utility Bills</p>
-                            <h5 style="line-height: 1px; font-style:italic;">Ksh 500</h5>
+                            <h5 style="line-height: 1px; font-style:italic;">{{post.utility}}</h5>
                         </div>
 
                         <div class="col-lg-3 mb-3">
                             <p>Pets</p>
-                            <h5 style="line-height: 1px; font-style:italic;">Not Stated</h5>
+                            <h5 style="line-height: 1px; font-style:italic;">{{post.pets}}</h5>
                         </div>
                     </div>
                 </div>
@@ -122,13 +122,7 @@
 
                 <div class="container">
                     <h2>Description</h2>
-                    <p>Rare opportunity to own a contemporary home, with a completely separate in-law unit. Home
-                        features approx 2800sqft 3beds/3.5baths along with 2 private outdoor spaces and two
-                        offices.....PLUS a 800sqft first floor 1bed+/1bath in-law (legally able to be rented out
-                        independently if not immediately needed) Unusually open and flowing floorplan. Each bedroom has
-                        an en suite bath. Exposed brick, high ceilings. large well applianced kitchen. Truly must be
-                        seen in person to appreciate. Convenient to transportation and highway. Short walk to expansive
-                        park and open space.</p>
+                    <p>{{post.body}}</p>
                 </div>
             <div class="table-de mb-5 mt-5">
                 <table class="table table-striped table-primary">
@@ -147,24 +141,24 @@
                         </tr>
                         <tr>
                             <td class="text-secondary">External Features</td>
-                            <td>Balcony, CCTV, Parking, Electric fence</td>
+                            <td>{{post.external}}</td>
                             
                         </tr>
                         <tr>
                             <td class="text-secondary">Internal Features</td>
-                            <td>Service charge included, Fibre Internet</td>
+                            <td>{{post.internal}}</td>
                            
                         </tr>
                         <tr>
                             <td class="text-secondary">Nearby</td>
-                            <td>Hospital, Bus Stop, Supermarket, Police Post</td>
+                            <td>{{post.nearby}}</td>
                            
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="container">
-                <small>Year Built:&nbsp; <span class="bold font-weight-bold">2019</span></small>
+                <small>Year Built:&nbsp; <span class="bold font-weight-bold">{{post.year_built}}</span></small>
                 <br>
                 <small>Last check for updates:&nbsp; <span
                         class="bold font-weight-bold">{{post.updated_on|date:"M d, Y" }}</span></small>

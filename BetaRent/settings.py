@@ -133,7 +133,7 @@ else:
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -147,3 +147,7 @@ DATABASES['default'].update(db_from_env)
 
 
 django_heroku.settings(locals())
+
+# Login Logout Redirects
+LOGIN_REDIRECT_URL  =   'listing'
+LOGOUT_REDIRECT_URL =   'home'

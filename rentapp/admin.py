@@ -10,7 +10,7 @@ class ListAdmin(admin.ModelAdmin):
     prepopulated_fields={'slug':('title',)}
     
 class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields={'slug':('title',)}
+    prepopulated_fields={'slug':('title',)}    
     
 admin.site.register(List,ListAdmin)
 admin.site.register(Category, CategoryAdmin)

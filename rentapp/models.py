@@ -18,11 +18,13 @@ TYPE=(
     (0,"None"),
     (1,"Featured")
     )
-
-DEPOSIT=(
-    (0, "None"),
-    (1,"Deposit")
-)
+NOT_ALLOWED = 'Not Allowed'
+ALLOWED = 'Allowed'
+    
+PETS=[
+    (NOT_ALLOWED, "Not_Allowed"),
+    (ALLOWED,"Allowed")
+]
 
 class Category(models.Model):
     title   =   models.CharField(max_length=20, unique=True, null=True)
@@ -39,7 +41,7 @@ class Category(models.Model):
         return self.title
 
 class List(models.Model):
-    title       =   models.CharField(max_length=255, unique=True)
+    title       =   models.CharField(max_length=255, unique=False, null=True, blank=False)
     list_img    =   models.ImageField(upload_to="house_pics/", null=True, blank=True)
     slug        =   models.SlugField(max_length=250, null=True, blank=True, unique=True)
     rent        = models.CharField(max_length=255, null=True)
@@ -58,9 +60,15 @@ class List(models.Model):
     agent_mob   =   models.CharField(max_length=10, null=True)
     agent_whats =   models.CharField(max_length=10, null=True)
     agent_mail  =   models.CharField(max_length=200, null=True)
-    deposit     =   models.IntegerField(choices=DEPOSIT, default=0)
-
-
+    deposit     =   models.CharField(max_length=200, null=True)
+    year_built  =   models.CharField(max_length=5, null=True, blank=True)
+    external   = models.CharField(max_length=1000, null=True)
+    internal   = models.CharField(max_length=1000, null=True)
+    nearby   = models.CharField(max_length=1000, null=True)
+    utility = models.CharField(max_length=1000, null=True)
+    pets   = models.CharField(max_length=20,choices=PETS, null=True)
+    g_maps = models.CharField(max_length=3000, null=True, blank=False)
+    
     class Meta:
         ordering    =   ['-created_on']
 
