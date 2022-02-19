@@ -24,36 +24,7 @@
 
 <body class="bg-unique">
     <!-- ////////////////////////////////////////////////////////////////////////// -->
-    <main class="form-signin section-padding-100-0 justify-content-center align-content-center text-center">
-        <!-- Main section begins here -->
-        <div class="container">
-            <form class="section-padding-100-70" action="" method="post">
-                <img class="mb-4" src="{% static 'img/logo.png' %}" alt="" width="150">
-                <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-                <div class="social-login">
-
-                    <a class="soc-btn btn btn-outline-dark" href="#"><i class="fa fa-facebook-f"></i> Facebook </a>
-                    <a class="soc-btn btn btn-outline-dark" href="{% provider_login_url 'google' %}"><i class="fa fa-google"></i> Google </a>
-
-                </div>
-
-                <p class="separator"><span>&nbsp;</span>Or<span>&nbsp;</span></p>
-
-                {% csrf_token %} {{ form|crispy }}
-                <button class="w-100 btn btn-lg btn-outline-light" type="submit">Sign in</button>
-                <p class="mt-5 mb-3 text-light">&copy; 2021–<script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                </p>
-
-                <div class="create-aacount">
-                    Not registered yet? <a href="#" class="text-underline text-light"> Create an Account</a>
-                </div>
-            </form>
-        </div>
-    </main>
-
-
+    
     <!-- Main section ends here -->
 
     <!-- //////////////////////////////////////////////////////////////////////// -->

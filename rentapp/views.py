@@ -6,6 +6,7 @@ from django.db.models import Q
 from .models import List, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
+from allauth.account.views import LoginView, SignupView
 
 # Create your views here.
 def home(request):

@@ -39,9 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rentapp',
     'crispy_forms',
     'tinymce',
+    'social_django',
+    
+    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'BetaRent.urls'
@@ -60,7 +69,7 @@ ROOT_URLCONF = 'BetaRent.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,10 +77,38 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+# Additional configuration settings
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_LOGOUT_ON_GET= True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+        }
+    }
+}
+
+SITE_ID = 1
 
 WSGI_APPLICATION = 'BetaRent.wsgi.application'
 
@@ -149,5 +186,10 @@ DATABASES['default'].update(db_from_env)
 django_heroku.settings(locals())
 
 # Login Logout Redirects
+LOGIN_URL = '/auth/login/google-oauth2/'
 LOGIN_REDIRECT_URL  =   'listing'
 LOGOUT_REDIRECT_URL =   'home'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1100521910771996'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '45fe7db4ba1268f62cb5a540a458f688' 
+SOCIAL_AUTH_URL_NAMESPACE = 'social'

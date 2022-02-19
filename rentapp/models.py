@@ -54,7 +54,7 @@ class List(models.Model):
     created_on  =   models.DateTimeField(auto_now_add=True)
     status      =   models.IntegerField(choices=STATUS, default=0)
     house_type   =   models.IntegerField(choices=TYPE, default=0)
-    categories  =   models.ManyToManyField(Category, related_name='house')
+    categories  =   models.ManyToManyField(Category, related_name='house', null=True)
     bathroom    =   models.CharField(max_length=20, null=True)
     bedrooms    =   models.CharField(max_length=20, null=True)
     agent_mob   =   models.CharField(max_length=10, null=True)
