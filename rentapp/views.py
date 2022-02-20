@@ -96,3 +96,8 @@ def house_detail(request, slug, *args, **kwargs):
     }
 
     return render(request, "rentapp/detail.html", context)
+
+class CreatePost(CreateView):
+    model = List
+    template_name = 'rentapp/post_create.html'
+    fields = ('title','house_img', 'house_img_1', 'house_img_2', 'house_img_3', 'house_img_4', 'house_img_5', 'house_img_6', 'house_img_7', 'rent','location' ,'county' ,'agent', 'agent_img', 'body', 'house_type' , 'categories', 'bathroom', 'bedrooms', 'agent_mob', 'agent_whats', 'agent_mail', 'deposit','year_built', 'external', 'internal', 'nearby', 'utility', 'pets')

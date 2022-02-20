@@ -11,6 +11,11 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('beta_rent/category/<slug:slug>/', views.CategoryView, name='category'),
     path('beta_rent/<slug:slug>/', views.house_detail, name='detail'),
+    
+    path('admin_create/', views.CreatePost.as_view(), name='post-create'),
+    
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]
 
 if settings.DEBUG: 

@@ -42,7 +42,14 @@ class Category(models.Model):
 
 class List(models.Model):
     title       =   models.CharField(max_length=255, unique=False, null=True, blank=False)
-    list_img    =   models.ImageField(upload_to="house_pics/", null=True, blank=True)
+    house_img    =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img_1    =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img_2     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img_3     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img_4     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img_5     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img_6     =   models.ImageField(upload_to="house_pics/", null=True, blank=True)
+    house_img_7     =   models.ImageField(upload_to="house_pics/", null=True, blank=True)
     slug        =   models.SlugField(max_length=250, null=True, blank=True, unique=True)
     rent        = models.CharField(max_length=255, null=True)
     location    =   models.CharField(max_length=255, null=True)
@@ -80,18 +87,81 @@ class List(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.id:
-            self.list_img   =   self.compressImage(self.list_img)
+            self.house_img   =   self.compressImage(self.house_img)
         super(List, self).save(*args, **kwargs)
 
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
     
-    def compressImage(self,list_img):
-        imageTemporary  =   Image.open(list_img)
+    def compressImage(self,house_img):
+        imageTemporary  =   Image.open(house_img)
         outputIOStream  =   BytesIO()
         imageTemporaryResized   =   imageTemporary.resize((1020,573))
         imageTemporary.save(outputIOStream, format='JPEG', quality=60)
         outputIOStream.seek(0)
-        list_img    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % list_img.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
-        return list_img
+        house_img    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img
+    
+    def compressImage(self,house_img_1):
+        imageTemporary  =   Image.open(house_img_1)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_1    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_1.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_1
+    
+    def compressImage(self,house_img_2):
+        imageTemporary  =   Image.open(house_img_2)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_2    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_2.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_2
+    
+    def compressImage(self,house_img_3):
+        imageTemporary  =   Image.open(house_img_3)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_3    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_3.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_3
+    
+    def compressImage(self,house_img_4):
+        imageTemporary  =   Image.open(house_img_4)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_4    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_4.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_4
+    
+    def compressImage(self,house_img_5):
+        imageTemporary  =   Image.open(house_img_5)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_5    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_5.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_5
+    
+    def compressImage(self,house_img_6):
+        imageTemporary  =   Image.open(house_img_6)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_6    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_6.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_6
+    
+    def compressImage(self,house_img_7):
+        imageTemporary  =   Image.open(house_img_7)
+        outputIOStream  =   BytesIO()
+        imageTemporaryResized   =   imageTemporary.resize((1020,573))
+        imageTemporary.save(outputIOStream, format='JPEG', quality=60)
+        outputIOStream.seek(0)
+        house_img_7    =   InMemoryUploadedFile(outputIOStream, 'ImageField', "%s.jpg" % house_img_7.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIOStream), None)
+        return house_img_7

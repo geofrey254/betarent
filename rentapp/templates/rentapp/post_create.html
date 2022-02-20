@@ -1,0 +1,62 @@
+{% extends "rentapp/base.html" %} {% load crispy_forms_tags %}{% block title %}Create Listing - Beta Rent{% endblock %} {% block content %}
+{% if user.is_authenticated %}
+<section class="creation">
+    <div class="container col-12 text-center">
+        <h2 class="text">Create Listing</h2>
+        <hr>
+        {{ form.media }}
+        <form action="." method="POST" enctype="multipart/form-data" style="right: 10px;
+        top:10px;
+        background: #FFFFFF;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 5px 10px 30px 1px rgba(131, 185, 247, 0.623);">
+            {% csrf_token %}
+            <div class="row" style="font-family: 'Poppins';">
+                <div class="col-12 mb-3">{{ form.title|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_1|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_2|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_3|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_4|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_5|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_6|as_crispy_field }}</div>
+                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img_7|as_crispy_field }}</div>
+                <div class="mt-4 mb-4">{{ form.rent|as_crispy_field }}</div>                
+                <div class="col-12">{{ form.location|as_crispy_field }}</div>
+                <div class="col-12 py-5">{{ form.county|as_crispy_field }}</div>
+                <div class="col-6">{{ form.agent|as_crispy_field }}</div>
+                <div class="col-6 form-control-file col-6 border rounded shadow-sm">{{ form.agent_img|as_crispy_field }}</div>
+                <div class="col-12">{{ form.body|as_crispy_field }}</div>
+                <div class="col-6">{{ form.house_type|as_crispy_field }}</div>
+                <div class="col-6">{{ form.categories|as_crispy_field }}</div>
+                <div class="col-6">{{ form.bathroom|as_crispy_field }}</div>
+                <div class="col-6">{{ form.bedrooms|as_crispy_field }}</div>
+                <div class="col-6">{{ form.agent_mob|as_crispy_field }}</div>
+                <div class="col-6">{{ form.agent_whats|as_crispy_field }}</div>
+                <div class="col-6">{{ form.agent_mail|as_crispy_field }}</div>
+                <div class="col-6">{{ form.deposit|as_crispy_field }}</div>
+                <div class="col-6">{{ form.year_built|as_crispy_field }}</div>
+                <div class="col-6">{{ form.external|as_crispy_field }}</div>
+                <div class="col-6">{{ form.internal|as_crispy_field }}</div>
+                <div class="col-6">{{ form.nearby|as_crispy_field }}</div>
+                <div class="col-6">{{ form.utility|as_crispy_field }}</div>
+                <div class="col-6">{{ form.pets|as_crispy_field }}</div>
+            </div>
+            <button type="submit" class="btn btn-dark mt-4">
+                Submit for moderation
+            </button>
+        </form>
+    </div>
+</section>
+{% else %}
+<div class="container text-center py-5">
+    <h3>Please Log In First</h3>
+    <p>By clicking on the Log in button below and logging into the create listing panel, you agree to create genuine lists and to thoroughly check through the post before uploading.
+
+        This helps to avoid miscommunication and for easier moderation of the posts by the staff.
+        Creators are responsible for ensuring that they act in respect to the goal of the company of creating content that is reliable and that can be trusted.</p>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-5 mb-5">Log In Here</a>
+</div>
+{% endif %}
+{% endblock content %}

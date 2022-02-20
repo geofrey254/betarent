@@ -150,3 +150,7 @@ DATABASES['default'].update(db_from_env)
 
 
 django_heroku.settings(locals())
+
+# Login Logout Redirects
+LOGIN_REDIRECT_URL  =   'post-create'
+LOGOUT_REDIRECT_URL =   'home'
