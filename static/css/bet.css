@@ -381,20 +381,15 @@ hr {
 }
 
 #googleIcon {
-  width: 70px;
+  width: 40px;
   cursor: pointer;
 }
 
-.fa-microphone {
-  width: 0px;
-  transition: 0.5s;
-  transition-delay: 0.5s;
-}
 
 input {
   font-size: 20px;
-  width: 480px;
-  padding: 12px 20px;
+  width: 200px;
+  padding: 10px 15px;
   border: 0;
   background: transparent;
   outline: none;
