@@ -393,19 +393,15 @@ hr {
 
 input {
   font-size: 20px;
-  width: 0px;
+  width: 500px;
+  padding: 12px 20px;
   border: 0;
   background: transparent;
   outline: none;
   transition: 2s;
 }
 
-.active input {
-  width: 500px;
-  padding: 12px 20px;
-}
-
-.active .mic-icon {
+.mic-icon {
   width: 30px;
 }
 
