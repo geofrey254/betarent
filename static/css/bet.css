@@ -393,16 +393,12 @@ hr {
 
 input {
   font-size: 20px;
-  width: 500px;
+  width: 480px;
   padding: 12px 20px;
   border: 0;
   background: transparent;
   outline: none;
   transition: 2s;
-}
-
-.mic-icon {
-  width: 30px;
 }
 
 /* Newsletter */
