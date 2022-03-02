@@ -38,8 +38,8 @@
               Featured</a>
           </div>
         </div>
-        {% if post.list_img %}
-        <a href="#"><img class="w-100" src="{{ post.list_img.url }}" alt="" style="height: 200px;"></a>
+        {% if post.house_img %}
+        <a href="{{post.get_absolute_url}}"><img class="w-100" src="{{ post.house_img.url }}" alt="" style="height: 200px;"></a>
         {% endif %}
         <div class="px-3 py-4">
           <a href="#" class="d-block">

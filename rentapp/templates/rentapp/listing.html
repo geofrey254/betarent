@@ -40,8 +40,8 @@
               Featured</a>
           </div>
         </div>
-        {% if post.list_img %}
-        <a href="{{post.get_absolute_url}}"><img class="w-100" src="{{ post.list_img.url }}" alt="" style="height: 200px;"></a>
+        {% if post.house_img %}
+        <a href="{{post.get_absolute_url}}"><img class="w-100" src="{{ post.house_img.url }}" alt="" style="height: 200px;"></a>
         {% endif %}
         <div class="px-3 py-4">
           <a href="#" class="d-block">
@@ -83,8 +83,8 @@
       <div class="col-lg-4 col-sm-12 col-md-4 mb-3">
         <div class="house-card">
           <div class="house-header-images">
-            {% if post.list_img %}
-            <a href="{{post.get_absolute_url}}"><img src="{{ post.list_img.url }}" /></a>
+            {% if post.house_img %}
+            <a href="{{post.get_absolute_url}}"><img src="{{ post.house_img.url }}" /></a>
             {% endif %}
           </div>
           <div class="house-content">
