@@ -38,9 +38,9 @@
               Featured</a>
           </div>
         </div>
-        {% if post.house_img %}
+        
         <a href="{{post.get_absolute_url}}"><img class="w-100" src="{{ post.house_img.url }}" alt="" style="height: 200px;"></a>
-        {% endif %}
+        
         <div class="px-3 py-4">
           <a href="#" class="d-block">
             <h5 class="text-dark h6" style="font-weight: 600;">{{post.location}}, {{post.county}}</h5>
