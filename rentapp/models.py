@@ -43,13 +43,6 @@ class Category(models.Model):
 class List(models.Model):
     title       =   models.CharField(max_length=255, unique=False, null=True, blank=False)
     house_img    =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
-    house_img_1    =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
-    house_img_2     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
-    house_img_3     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
-    house_img_4     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
-    house_img_5     =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
-    house_img_6     =   models.ImageField(upload_to="house_pics/", null=True, blank=True)
-    house_img_7     =   models.ImageField(upload_to="house_pics/", null=True, blank=True)
     slug        =   models.SlugField(max_length=250, null=True, blank=True, unique=True)
     rent        = models.CharField(max_length=255, null=True)
     location    =   models.CharField(max_length=255, null=True)
@@ -93,3 +86,10 @@ class List(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+    
+class ListImage(models.Model):
+    post = models.ForeignKey(List, default=None, on_delete=models.CASCADE)
+    images = models.FileField(upload_to = 'List_images/')
+ 
+    def __str__(self):
+        return self.post.title

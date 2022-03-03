@@ -1,7 +1,9 @@
 from django.contrib import admin
-from .models import List, Category
+from .models import List, Category, ListImage
 
-
+class ListImageAdmin(admin.StackedInline):
+    model = ListImage
+    
 # Register your models here.
 class ListAdmin(admin.ModelAdmin):
     list_display=('title','status','created_on', 'house_type')
@@ -9,8 +11,16 @@ class ListAdmin(admin.ModelAdmin):
     search_fields=['title','body','blog_type']
     prepopulated_fields={'slug':('title',)}
     
+    inlines = [ListImageAdmin]
+ 
+    class Meta:
+       model = List
+    
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields={'slug':('title',)}    
     
 admin.site.register(List,ListAdmin)
 admin.site.register(Category, CategoryAdmin)
+@admin.register(ListImage)
+class ListImageAdmin(admin.ModelAdmin):
+    pass

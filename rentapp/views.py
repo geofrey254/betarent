@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView,View, CreateView
 from django.core.mail import send_mail, send_mass_mail, BadHeaderError
 from django.conf import settings
 from django.db.models import Q
-from .models import List, Category
+from .models import List, Category, ListImage
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 
@@ -80,7 +80,8 @@ def CategoryView(request, slug):
 
 def house_detail(request, slug, *args, **kwargs):
     latest = List.objects.all()[:9]
-    post        =   List.objects.get(slug=slug)    
+    post        =   List.objects.get(slug=slug)
+    photos =  ListImage.objects.filter(post=post)   
     search_post =   request.GET.get('q')
     
     # Search filter
@@ -93,11 +94,14 @@ def house_detail(request, slug, *args, **kwargs):
     context     =   {
         "post": post,
         "latest":latest,
+        'photos':photos
     }
 
     return render(request, "rentapp/detail.html", context)
 
 class CreatePost(CreateView):
     model = List
+    
     template_name = 'rentapp/post_create.html'
-    fields = ('title','house_img', 'house_img_1', 'house_img_2', 'house_img_3', 'house_img_4', 'house_img_5', 'house_img_6', 'house_img_7', 'rent','location' ,'county' ,'agent', 'agent_img', 'body', 'house_type' , 'categories', 'bathroom', 'bedrooms', 'agent_mob', 'agent_whats', 'agent_mail', 'deposit','year_built', 'external', 'internal', 'nearby', 'utility', 'pets')
+    fields = ('title','house_img','rent','location' ,'county' ,'agent', 'agent_img', 'body', 'house_type' , 'categories', 'bathroom', 'bedrooms', 'agent_mob', 'agent_whats', 'agent_mail', 'deposit','year_built', 'external', 'internal', 'nearby', 'utility', 'pets')
+   
