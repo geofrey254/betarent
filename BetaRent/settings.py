@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['https://betarent.herokuapp.com/', 'localhost']
 
-# SITE_ID=1
+SITE_ID=2
 
 
 # Application definition
