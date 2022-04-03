@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 import sys
 from django.db import models
 from django.contrib.auth.models import User
@@ -42,7 +43,14 @@ class Category(models.Model):
 
 class List(models.Model):
     title       =   models.CharField(max_length=255, unique=False, null=True, blank=False)
-    house_img    =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    house_img   =   models.ImageField(upload_to="house_pics/", null=True, blank=False)
+    bedroom_1   =   models.ImageField(upload_to="bedrooms", null=True)
+    bedroom_2   =   models.ImageField(upload_to="bedrooms", null=True, blank=True)
+    bedroom_3   =   models.ImageField(upload_to="bedrooms", null=True, blank=True)
+    living_room =   models.ImageField(upload_to="living_room", null=True)    
+    kitchen     =   models.ImageField(upload_to="kitchen", null=True)
+    washroom_1  =   models.ImageField(upload_to="washrooms2")
+    washroom_2  =   models.ImageField(upload_to="washrooms2", null=True)
     slug        =   models.SlugField(max_length=250, null=True, blank=True, unique=True)
     rent        = models.CharField(max_length=255, null=True)
     location    =   models.CharField(max_length=255, null=True)
@@ -54,7 +62,7 @@ class List(models.Model):
     created_on  =   models.DateTimeField(auto_now_add=True)
     status      =   models.IntegerField(choices=STATUS, default=0)
     house_type   =   models.IntegerField(choices=TYPE, default=0)
-    categories  =   models.ManyToManyField(Category, related_name='house', null=True)
+    categories  =   models.ManyToManyField(Category, related_name='house')
     bathroom    =   models.CharField(max_length=20, null=True)
     bedrooms    =   models.CharField(max_length=20, null=True)
     agent_mob   =   models.CharField(max_length=10, null=True)
@@ -79,17 +87,6 @@ class List(models.Model):
         return reverse('detail', args=[self.slug])
     
     def save(self, *args, **kwargs):
-        if not self.id:
-            self.house_img   =   self.compressImage(self.house_img)
-        super(List, self).save(*args, **kwargs)
-
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
-    
-class ListImage(models.Model):
-    post = models.ForeignKey(List, default=None, on_delete=models.CASCADE)
-    images = models.FileField(upload_to = 'List_images/')
- 
-    def __str__(self):
-        return self.post.title

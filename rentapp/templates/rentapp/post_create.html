@@ -14,9 +14,16 @@
             {% csrf_token %}
             <div class="row" style="font-family: 'Poppins';">
                 <div class="col-12 mb-3">{{ form.title|as_crispy_field }}</div>
-                <div class="form-control-file col-6 border rounded shadow-sm">{{ form.house_img|as_crispy_field }}</div>
-                <div class="mt-4 mb-4">{{ form.rent|as_crispy_field }}</div>                
-                <div class="col-12">{{ form.location|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.house_img|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.bedroom_1|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.bedroom_2|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.bedroom_3|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.living_room|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.kitchen|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.washroom_1|as_crispy_field }}</div>
+                <div class="form-control-file col-12 border rounded shadow-sm">{{ form.washroom_2|as_crispy_field }}</div>
+                <div class="col-6">{{ form.rent|as_crispy_field }}</div>                
+                <div class="col-6">{{ form.location|as_crispy_field }}</div>
                 <div class="col-12 py-5">{{ form.county|as_crispy_field }}</div>
                 <div class="col-6">{{ form.agent|as_crispy_field }}</div>
                 <div class="col-6 form-control-file col-6 border rounded shadow-sm">{{ form.agent_img|as_crispy_field }}</div>

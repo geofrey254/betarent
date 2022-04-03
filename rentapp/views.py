@@ -1,11 +1,14 @@
+from dataclasses import fields
+from re import template
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView,View, CreateView
 from django.core.mail import send_mail, send_mass_mail, BadHeaderError
 from django.conf import settings
 from django.db.models import Q
-from .models import List, Category, ListImage
+from .models import List, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
+from django.forms import inlineformset_factory
 
 # Create your views here.
 def home(request):
@@ -81,7 +84,6 @@ def CategoryView(request, slug):
 def house_detail(request, slug, *args, **kwargs):
     latest = List.objects.all()[:9]
     post        =   List.objects.get(slug=slug)
-    photos =  ListImage.objects.filter(post=post)   
     search_post =   request.GET.get('q')
     
     # Search filter
@@ -94,14 +96,13 @@ def house_detail(request, slug, *args, **kwargs):
     context     =   {
         "post": post,
         "latest":latest,
-        'photos':photos
     }
 
     return render(request, "rentapp/detail.html", context)
 
 class CreatePost(CreateView):
     model = List
-    
     template_name = 'rentapp/post_create.html'
-    fields = ('title','house_img','rent','location' ,'county' ,'agent', 'agent_img', 'body', 'house_type' , 'categories', 'bathroom', 'bedrooms', 'agent_mob', 'agent_whats', 'agent_mail', 'deposit','year_built', 'external', 'internal', 'nearby', 'utility', 'pets')
-   
+    fields = ('title', 'categories','house_img','bedroom_1', 'bedroom_2','bedroom_3', 'living_room', 'kitchen','washroom_1', 'washroom_2','rent','location' ,'county' ,'agent', 'agent_img', 'body', 'house_type' , 'bathroom', 'bedrooms', 'agent_mob', 'agent_whats', 'agent_mail', 'deposit','year_built', 'external', 'internal', 'nearby', 'utility', 'pets')
+
+    

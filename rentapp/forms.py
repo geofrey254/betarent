@@ -2,7 +2,7 @@ from django.forms import ModelForm, Textarea, FileInput, DateTimeField, TextInpu
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-
+from .models import List, ListImage
 class CreateUserForm(UserCreationForm):
     class Meta:
         model   =   User
